@@ -1,0 +1,23 @@
+<template>
+<lightning-card title="Calculator">
+    <div class="slds-p-around_medium">
+        <p class="slds-text-align_center"></p>
+     <div>
+        <lightning-input  label="Total" type="number" value={total} onchange={changeTotal}></lightning-input>
+        <lightning-input label="Percentage" type="number " value={percentage} onchange={changePercentage}></lightning-input>
+        <lightning-input label="Discount" value={discount} onchange={changeDiscount}></lightning-input>
+        <lightning-input label="Markup" value={markup} onchange={changeMarkup}></lightning-input>
+        <div> Result  <lightning-badge class="slds-theme_error" label={result}></lightning-badge> </div>
+     </div>
+    </div>
+        <div class="slds-p-around_medium">
+            <p class="slds-text-align_center"></p>
+       <lightning-button variant="brand" class="slds-m-right_small" label="Percentage" onclick={calculatePercentage}></lightning-button>
+       <lightning-button class="slds-m-right_small" label="Discount" onclick={calculateDiscount}></lightning-button>
+       <lightning-button label="Markup" onclick={calculateMarkup}></lightning-button>
+   
+     </div>
+   
+<c-child-calculator></c-child-calculator>
+</lightning-card>
+</template>

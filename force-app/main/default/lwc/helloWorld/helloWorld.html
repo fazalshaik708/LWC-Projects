@@ -1,0 +1,72 @@
+<template>
+    <lightning-card title="two way binding">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-align_center"></p>
+            
+        
+            <lightning-input label="Enter Name "  type="text" onkeyup={changeName}  ></lightning-input>
+        <lightning-input label="Enter Course "  type="text" onkeyup={changeHandler}  ></lightning-input>
+    
+        <div>{fullName} and the technology is {title}</div>
+       
+        </div>
+       
+    </lightning-card>
+
+    <lightning-card title="Track">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-align_center"></p>
+            
+        
+            <lightning-input label="Enter Street "  type="text" onkeyup={changeStreet}  ></lightning-input>
+        <!-- <lightning-input label="Enter Course "  type="text" onkeyup={changeHandler}  ></lightning-input>
+     -->
+        <div>{address.street} of my Place</div>
+       
+        </div>
+       
+    </lightning-card>
+    <lightning-card title="getters">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-align_center"></p>
+            
+            <p> my name is {firstName}</p>
+            <P> the multy of num is {sumNumbers}</P>
+        </div>
+       
+    </lightning-card>
+
+
+    <lightning-card  title=" Conditional rendering Directive If:true and if:false">
+        <lightning-button   class="slds-p-around_medium"  variant="brand" label="show" onclick={shaowData}></lightning-button>
+    
+    
+      <template lwc:if={isAvailable}> 
+     <div class="slds-p-around_medium slds-theme_success">  welcome to LWC Shaik</div>
+     </template>
+     <template if:false={isAvailable}>
+      <div class="slds-p-around_medium  slds-theme_error"> You cant see the Data please click the Button</div>
+      </template>
+        
+      <lightning-input class="slds-p-around_medium"  title="Enter the word to see the Data " type="text" onkeyup={changeMethod}></lightning-input>
+      <template lwc:if={showData}> 
+        <div class="slds-p-around_medium slds-theme_success">  Hurray!!  it's Correct </div>
+      </template>
+      <template if:false={showData}> 
+        <div class="slds-p-around_medium slds-theme_error" >  Please type Correct Word </div>
+      </template>
+     
+    </lightning-card >
+
+    <lightning-card title="for each loop">
+        <template for:each={carList} for:item="car">
+        
+        <ul  key={car} class=" slds-has-dividers_around-space  slds-p-around_medium ">
+            <li class="slds-item">{car}</li>
+        </ul>
+        </template>
+    </lightning-card>
+ 
+    
+    
+</template>

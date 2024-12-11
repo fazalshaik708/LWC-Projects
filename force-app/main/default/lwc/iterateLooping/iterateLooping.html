@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="IterateLoop">
+        <template iterator:name={conList}>
+            <div key={name.value.name}>
+            <ul class=" slds-has-dividers_around-space  slds-p-around_medium ">
+                <template if:true={name.first}>
+                  <div class=" slds-has-dividers_around-space  slds-p-around_medium  slds-item ">
+                        Liat of Names 
+                  </div>
+                </template>
+                <li class="slds-item">
+                   <strong>{name.value.Company}</strong>
+                   {name.value.name}
+                </li>
+                <template if:true={name.last}>
+                    <div class=" slds-has-dividers_around-space  slds-p-around_medium slds-item ">
+                          Liat of last ended
+                    </div>
+                  </template>
+            </ul>
+        </div>
+
+        </template>
+
+    </lightning-card>
+    <lightning-card title="for each loop with array of object">
+        <template for:each={conList} for:item="item">
+        
+        <ul  key={item.id} class=" slds-has-dividers_around-space  slds-p-around_medium ">
+            <li class="slds-item">{item.name} <strong>{item.Company}</strong></li>
+        </ul>
+        </template>
+    </lightning-card>
+</template>
